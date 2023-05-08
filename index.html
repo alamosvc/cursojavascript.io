@@ -1,0 +1,957 @@
+
+<script>
+    /** comentario javascript**/
+    //comentario de una linea
+    /*var miVariable="freeCodeCamp";
+    var miNombre="sebastian";
+    const tuNombre="alfonso";
+
+    console.log(miVariable);
+    */
+   /*asignar valor a la misma variable 
+   var a=5; 
+   var b=a;*/
+   /*inciiailizar variables
+    se puede incializar con let const y var
+   var x=9; esto es incializar
+   var miIdioma="español"
+   */
+  /*variable no incializada
+  var a; (undefined)
+  a=56; iniciallizada
+  */
+    /* javascript es sensible a mayu minus 
+        var miVariable=5;
+        console.log(MIVARIABLE); ERROR
+    */
+   /*OPERACIONES ARITMETICAS 
+    var SUMA=7+4;
+    var RESTA=7-4;
+    var producto= 5*3;
+    var cociente = 5/2;
+    var miNumeroDecimal=3.4;
+    var producto = 3.4 * 10.4;
+    var producto = 3 * 10.4;
+    var resto = 15%5; resultado es 0 
+    var librosComprados=105;
+    librosComprados++;
+    var librosVendidos=105;
+    librosComprados--;
+    var miCadena="javascript";
+    console.log(miCadena.[0]); muestra el caracter j
+    console.log(miCadena.[length-1]); muestra el ultimo caracter
+    console.log(miCadena.[length-3]); muestra el  caracter i
+
+    */
+var miSustantivo="perro";
+var miAdjetivo="negro";
+var miVerbo="corrio";
+var miAdverbio="rapidamente";
+var palabrasEnBlanco1="El " + miSustantivo+" "+miAdjetivo+" " +miVerbo+" "+miAdverbio + " a la tienda.";
+console.log(palabrasEnBlanco1)
+
+var miSustantivo="bicicleta";
+var miAdjetivo="pequeña";
+var miVerbo="volo";
+var miAdverbio="lentamente";
+var palabrasEnBlanco2="La " + miSustantivo+"  "+miAdjetivo+miVerbo+" a la tienda "+miAdverbio + ".";
+
+
+console.log(palabrasEnBlanco2);
+/*arreglos*/
+var miArreglo=["john", 24];
+console.log(miArreglo);
+var estudiantes=["nora","gino","emily","juan"];
+console.log(estudiantes);
+var notas=[95,67,85,36];
+console.log(notas);
+/*arreglos anidados  o listas*/
+var listaDeEstudiantes=[["nora",97],["gino",78]];
+console.log(listaDeEstudiantes);
+var listaDeProductos=[["camisa",5.67,"s134"] , ["celular",250,"s356"],["zapatos",36.7,"s456"]];
+console.log(listaDeProductos);
+var datos=[[3.4,5.6,3.2],[6.4,4.5,7.8],[5.6,3.4,7.8]];
+console.log(datos);
+var miArreglo=[10,20,30];
+/*
+    ARREGLLO  [10,20,30]
+    indices     0  1  2
+*/
+console.log(miArreglo[1]);
+var suma=miArreglo[0]+miArreglo[1]+miArreglo[2];
+console.log(suma);
+/*modificar datos de arreglo*/
+miArreglo[0]=40;
+console.log(miArreglo);
+//anidar arreglos
+miArreglo[1]=[1,2,3];
+//accederr a arreglos anidados
+var miArreglo=[[1,2,3],[4,5,6],[7,8,9]];
+/* arreglo [[1,2,3],[4,5,6],[7,8,9]]
+indices         0       1       2
+indices internos
+            0  1  2   0 1 2  0 1 2*/
+miArreglo=[1][2]; //6
+//como agregar(.push) o quitar(.pop(), .shift(), .unshift()) elementos en arreglos
+var estaciones=["invierno","otoño","primavera"]
+estaciones.push("verano");
+estaciones.pop();//elimina el ultimo elemento del arreglo
+var miEstacion = estaciones.pop() //elimina el ultimo elemento y lo guarda en una variable
+estaciones.shift()//elimina el primer elemento del arreglo
+estaciones.unshift("verano");//agrega elemento en el principio del arreglo
+//pequeño proy de compras
+var miListaDeCompras=[["cereal",3],["leche",2],["galletas",4],["pan",5],["refresco",7],["pollo",7]];
+//ceral
+console.log("Voy a comprar " + miListaDeCompras[0][1] + " unidades de " + miListaDeCompras[0][0] + "." );
+//leche
+console.log("Voy a comprar " + miListaDeCompras[1][1] + " unidades de " + miListaDeCompras[1][0] + "." );
+//galletas 
+console.log("Voy a comprar " + miListaDeCompras[2][1] + " unidades de " + miListaDeCompras[2][0] + "." );
+//pan 
+console.log("Voy a comprar " + miListaDeCompras[3][1] + " unidades de " + miListaDeCompras[3][0] + "." );
+//refresco
+console.log("Voy a comprar " + miListaDeCompras[4][1] + " unidades de " + miListaDeCompras[4][0] + "." );
+//pollo
+console.log("Voy a comprar " + miListaDeCompras[5][1] + " unidades de " + miListaDeCompras[5][0] + "." );
+//funciones
+function mostrarMensaje(){
+    console.log("Hola, Mundo")
+}
+mostrarMensaje();
+//argumentos de las funciones
+var a=5;
+var b=6;
+function sumar(a,b){
+    var suma=a+b;
+    console.log("el resultado de " + a + " + " + b+ " es:" + suma +".");
+}
+sumar(7,8);
+sumar(-4,8);
+sumar(233,13);
+function concatenarTresCadenas(cadena1,cadena2,cadena3){
+    console.log(cadena1 + " "+ cadena2+" "+ cadena3);
+}
+concatenarTresCadenas("caca","perro","auto");
+//variables locales globales
+var miNombre="nora";//variable global
+function mostrarMiNombre(){
+    var miNombre="Gino";//variable local
+    console.log(miNombre);//va a tirar gino
+}
+mostrarMiNombre();
+console.log(miNombre);//va a tirar nora
+//return
+function sumar(a,b){
+    return a+b;//devuelve el valor de una funcion pero no lo muestra
+}
+console.log(sumar(5,3));
+//undefined
+function sumar(a,b){
+    console.log(a+b)//imprime 9
+}
+console.log(sumar(5,4))//por defecto la funcion va a devolver undefined
+//
+function sumar(a,b){
+    return a+b;
+}
+var resultado=sumar(5,3);//var resultado=8
+function crearCadenaConMeta(lenguajeDeProgramacion){
+    return "Mi meta es aprender"+lenguajeDeProgramacion;
+}
+var miMeta=crearCadenaConMeta("javascript");
+//asignacion var miMeta="Mi meta es aprender Javascript";
+console.log(miMeta)
+//colas estructura de datos abstracta en la cual los elementos se mantienen en orden. los nuevos elementos se pueden añadir al final de la cola y los elementos previos
+//se retiran del principio de la cola.
+function proximoEnLaFila(arreglo,elemento){
+    arreglo.push(elemento);//agregar al final del arreglo
+    return arreglo.shift();//remover el primer elemento
+    
+}
+var miArreglo=[1,2,3,4,5];
+console.log("Antes " + JSON.stringify(miArreglo));
+console.log( proximoEnLaFila(miArreglo, 6) );
+console.log("Despues " + JSON.stringify(miArreglo));
+//valores booleanos true y false
+console.log(5==5);//devuelve true
+console.log(5=="5");//devuelve true se convierte a tipo de dato comun
+console.log(5==="5");// devuelve false porque es estricto
+//como comparar valores
+var a,b;
+a=5;
+b=5;
+console.log(a==b);//true
+console.log(a===b);//true
+b=8;
+console.log(a==b);//false
+console.log(a===b);//false
+b="5";
+console.log(a==b);//true porque convierte
+console.log(a===b);//false
+//operador de desigualdad (!=)
+console.log(9!=6);//true
+console.log("9"!==9);//true porque un es estring y el otro num 
+//operador mayor que> menor que< se puede usar en numeros y strings
+//operador menor o igual que <=  mayor  o igual que=>
+
+/* sentencias if 
+function puntajeDeGolf(par,golpes){
+  if(golpes==1){
+    return "Hole in one";
+  }
+  else if(golpes<=par-2){
+    return "eagle";
+  }
+  else if(golpes==par-1){
+    return "birdie";
+  }
+  else if(golpes==par){
+    return "par";
+  }
+  else if(golpes==par+1){
+    return "bogey";
+  }
+  else if(golpes==par+2){
+    return "double bogey"
+  }
+  else if(golpes>=par+3){
+    return "Go home"
+  }
+}
+puntajeDeGolf(1,1);*/
+/* sentencias switch
+
+function clasificarValor(valor){
+    var respuesta;
+    switch(valor){
+        case 1:
+            respuesta="alpha";
+            break;
+        case 2:
+            respuesta="beta"
+            break;
+        case 3:
+            respuesta="gamma"
+            break;
+        case 4:
+            respuesta="delta"
+            break;
+    }
+
+}
+OTRO SWITCH
+var producto="hamburguesa";
+switch(producto){
+    case "pizza":
+        console.log("la pizza basica cuesta $10.55");
+        break;
+    case "hamburguesa":
+        console.log("las hamburguesas cuestan $6.78");
+        break;
+    case "helado":
+        console.log("el helado cuesta 7.78");
+        break
+}
+*/
+/*
+    agregar else a switch
+    function seleccionarIdioma(valor){
+        var idioma;
+        switch(valor){
+            case 1:
+                idioma="español";
+                break;
+            case 2:
+                idioma="frances";
+                break;
+            case 3:
+                idioma="italiano";
+                break;
+            default:
+                idioma="ingles";
+                break;
+        }
+    return idioma
+    }
+
+*/
+/*sentencia switch para varios valorres
+    function clasificarVolumen(valor){
+        var volumen;
+        switch(valor){
+            case 1:
+                volumen="bajo";
+                break;
+            case 2:
+            case 3:
+                volumen="intermedio";
+                break;
+            case 4:
+            case 5:
+            case 6:
+                volumen="alto";
+                break;
+            
+                           
+
+        }
+    return volumen;
+    }
+    console.log(clasificarVolumen(3))
+*/
+/* reemplazar if else por sitch
+    function seleccionarIdioma(valor){
+        var idioma;
+        switch(valor){
+            case 1:
+                idioma="español";
+                break;
+            case 2:
+                idioma="frances";
+                break;
+            case 3:
+                idioma="italiano";
+                break;
+            default:
+                idioma="iingles";
+                break;
+
+        }
+        return valor;
+    }
+    console.log(seleccionarIdioma(3));
+*/
+//objetos
+//los nombres de las propiedades se puede usar sin comillas siempre
+//y cuando no tenga mas de una palabra
+var miPerro={
+    "nombre":"gino",
+    "edad":5,
+    "peso":6,
+    "raza":"beagle"
+};
+//acceder a propiedades notacion de punto
+var miPerro={
+    "nombre":"gino",
+    "edad":5,
+    "peso":6,
+    "raza":"beagle"
+
+};
+//para invocar la proopiedad de un objeto con notacion de puntos
+console.log(miPerro.nombre);
+//para invocar la prpiedad con corchetes
+console.log(miPerro["nombre"]);
+var miCuaderno={
+    "color":"verde",
+    "categoria":3,
+    "numeroDePaginas":200,
+    "numero de hojas":100
+};
+console.log(miCuaderno.numeroDePaginas)
+//acceder a los valores usando variables
+var resultados={
+    1:"nora256",
+    2:"gino577",
+    3:"estef543",
+    4:"kiara566"
+};
+//solo se puede invocar variables con notacion de corchetes porque con notacion de puntos tenemos que escribir explicitamente el nombre de la propiedad
+var posicion=4;
+coonsole.log(resultados[posicion]);
+//actualizar valores de propiedad para que cambie
+var mochila={
+    "color":"azul",
+    "tamaño":"mediano",
+    "contenido":["botella de agua", "cuaderno"]};
+    console.log(mochila.color);//azul
+    mochila.color="verde"//color: verde
+    console.log(mochila.color);
+    console.log(mochila.contenido);
+    mochila.contenido.push("lapiz");
+    console.log(mochila.contenido);
+    mochila.contenido=[];
+    console.log(mochila.contenido);
+//agregar propiedades
+var curso={
+    "titulo":"aprende javascript desde cero",
+    "idioma":"español",
+    "duracion":"30"
+};
+
+curso.vistas=34500;
+curso["vistas"]=34500;
+console.log(curso.vistas)
+//ELIMINAR PROPIEDADES
+delete curso.duracion;
+console.log(curso)//    "titulo":"aprende javascript desde cero","idioma":"español",
+//usar objeto para reemplazar switch
+function buscarElementoQuimico(simbolo){
+    var simbolosQuimicos={
+    "Al":"Aluminio",
+    "S":"Azufre",
+    "Cl":"Cloro",
+    "He":"Helio",
+    "B":"Boro",
+    "Li":"Litio"
+    };
+    /*var elementoQuimico="";
+    switch(simbolo){
+        case "Al":
+            elementoQuimico="Aluminio";
+            break;
+        case "S":
+            elementoQuimico="Azufre";
+            break;
+        case "Cl":
+            elementoQuimico="Cloro";
+             break;
+        case "H":
+            elementoQuimico="Cloro";
+            break;
+        case "B":
+            elementoQuimico="Boro";
+            break;
+    }*/
+    return simbolosQuimicos[simbolo];
+
+}
+/*verificar propiedades con objeto.hasOwnProperty(propiedad)*/
+var miCuaderno2={
+    "color":"verde",
+    "categoria":3,
+    "precio":4.56
+};
+console.log(miCuaderno.hasOwnProperty("color"))//true
+
+console.log(miCuaderno.hasOwnProperty("cantidad"))//false
+function verificarPropiedad(obj,propiedad){
+    if (obj.hasOwnProperty(propiedad)){
+        return "propiedad " + obj[propiedad];
+    }
+    else{return "el objeto no tiene esta propiedad"}
+}
+//objetos complejos 
+//ARREGLO DE OBJETOS
+var ordenesDePizzas=[
+    {    
+    "tipo":"margarita",
+        "tamaño":"individual",
+        "precio":5.67,
+        "toppings":[
+            "extra queso",
+            "champiñones",
+            "piña"
+        ],
+        "paraLlevar":true
+    },
+    {
+        "tipo":"cuatro quesos",
+        "tamaño":"familiar",
+        "precio":18.34,
+        "toppings":[
+            "extra queso",
+            "pimenton",
+        ],
+        "paraLlevar":false
+    },
+    {
+        "tipo":"Napolitana",
+        "tamaño":"individual",
+        "precio":8.34,
+        "toppings":[
+            "extra queso",
+            "pimenton",
+        ],
+        "paraLlevar":true
+    }
+];
+console.log(ordenesDePizzas[0]);
+console.log(ordenesDePizzas[1]);
+console.log(ordenesDePizzas[0]["tipo"]);
+console.log(ordenesDePizzas[0]["precio"]);
+console.log(ordenesDePizzas[1]["tipo"]);
+//objets anidados
+var miReceta={
+    "descripcion": "mi postre favorito",
+    "costo":15.6,
+    "ingredientes":{
+        "masa":{
+            "harina":"100grs",
+            "sal":"1 cucharadita",
+            "mantequilla": "200grs"
+        }
+    }
+};
+//acceder a sus elementos
+console.log(miReceta.descripcion);
+console.log(miReceta.costo);
+console.log(miReceta.ingredientes);
+console.log(miReceta.ingredientes.masa.harina);  
+console.log(miReceta.ingredientes.masa.agua);
+console.log(miReceta.ingredientes.masa["sal"]);
+console.log(miReceta.ingredientes.cobertura);
+console.log(miReceta.ingredientes.cobertura.azucar);
+console.log(miReceta.ingredientes["cobertura"].chocolate);
+console.log(miReceta.ingredientes.cobertura["mantequilla"]);
+//arreglos anidados
+var coleccionDeDiscos={
+    7853:{
+        tituloDelAlbum:"bee gees greaates",
+        artista:"bee gees",
+        canciones:["stayin alive"]
+    },
+    5439:{
+        tituloDelAlbum:"abba gold"
+    }
+}
+function actualizarDiscos(discos,id,propiedad,valor){
+    if (valor===""){
+        delete discos[id][propiedad];
+    }
+    else if (propiedad=="caciones"){
+        discos[id][propiedad]=discos[id][propiedad]||[];
+        discos[id][propiedad].push(valor)
+    }
+    else{
+        discos[id][propiedad]=valor
+    }
+
+}
+//ciclos repetititvos while o for
+/*ciclo while cuando no tenemos numero especifico de iteraciones
+i=0;
+while(i<8){
+    console.log("hola mundo")
+    i++;
+}*/
+var miArreglo=[];
+var i=0;//inicialmente es 0
+console.log(miArreglo)
+while(i<10){
+    miArreglo.push();//se agrega el valor 0 al arreglo por ser menor d 10
+    i++;//i suma uno y ahora i=1;
+}
+var numeros=[2,3,4,5,6,7,8,9,34];
+while(numeros.length>4){//mientras la longitud del arreglo sea mayr a 4
+    miArreglo.pop();//se quitan valores del arreglo mientras 
+}
+//ciclo for cuando sabemos cuantas iteraciones seran necesarias
+var miArreglo=[];
+for(var i=0; i<10;i++ ){//puede ser var let o const
+    miArreglo.push(i);//agregamos valores al arreglo desde 0 hasta 9
+}
+var miArreglo=[];
+for(var i=1;i<20;i+=2){
+    miArreglo.push(i);//agregar valores con el metodo push al final del arreglo
+}
+//contar hascia atras
+for(var i=15;i>=10; i--){
+    console.log(i);//el valor se va reduciendo de 1 en 1 hasta que se cumple la condicion
+}
+//iterar sobre un arreglo,, hacer algfo con cada elemento de un arreglo
+var miArreglo=[4,6,8,2];
+var total=0;
+for(var i=0; i<miArreglo.length;i++){
+    //ino puede ser igual al tamaño del arreglo p`rque los arreglos comienzan el indice en cero
+    total+=miArreglo[i];//en la primera iteracion total =4 i=0 en la segunda total=10 i=1...total=20 i =2
+}
+var lenguajes=["javascript","python","java","c++"];
+for (var i=0;i<lenguajes.length;i++){
+    console.log(lenguajes[i].toUpperCase());//convierte cada valor string del arreglo a mayus
+}
+function contarNumeroPares(arreglo){
+    var total=0;
+    for(var i=0;i<arreglo.length;i++){
+        if(arreglo[i]%2==0){//si el modulo de la division por 2 es 0 entonces el numero es par
+            total++;
+        }
+
+    }
+    return total;
+}
+var miArreglo=[[1,2,3],[4,5,6],[7,8,9]];
+for (var i =0; i<miArreglo.length;i++){
+    var arregloAnidado=miArreglo[i];
+    for(var j=0;j<arregloAnidado.length;j++){
+        arregloAnidado[j];
+    }
+}
+//busqueda de perfiles
+var contactos=[
+    {
+        "nombre":"nora",
+        "apellido": "nava",
+        "numero":"0543236543",
+        "gustos": ["pizza","programacion"]
+    },
+    {   "nombre":"harry",
+        "apellido": "potter",
+        "numero":"0994372684",
+        "gustos": ["hogwarts","magia"]
+    },
+    {
+
+        "nombre":"sherlock",
+        "apellido": "holmes",
+        "numero":"0487345643",
+        "gustos": ["cosas interesantes","violin"]
+    }
+
+]
+//contactos es un arreglo de objetos
+function buscarPerfil(nombre,propiedad){//la funcion busca una propiedad en base al nombre
+    for( var i=0; i<contactos.length;i++ ){//pj buscar el apellido del nombre "nora", mientras sea menor al largo del arreglo
+        if(contactos[i].nombre===nombre){//checkea que el nombre este en alguno de los elementos del arreglo
+            return contactos[i][propiedad] || "La propiedad no existe.";//si conseguimos el nombre.accedemos a la propiedad .. ||sino existe la propiedad nos muestra el mensaje
+        }
+        //si el contacto no existe
+        return "el contacto no esta en la lista.";   
+    }
+}
+console.log(buscarPerfil("nora", "gustos"));//[pizza, programacion]
+console.log(buscarPerfil("nora","direccion"));//direccion undefined "la propiedad no esxiste"
+//generar nuemro aleatorio
+function generarFraccionAleatoria(){
+    var num=Math.floor(Math.round()*20);//bjeto que tiene funciones matematicas basicas..roudn retorna un valor entre 0 y 1(el 1 no incluido)
+    //ma¡h floor retornar el mayor numero entero, trunca la parte decimal math round*20= 18,38 floor     18
+}
+for (var i=0;i<15;i++){
+    console.log(generarNumerosAleatorios());
+}
+//numeros aleatorios en un rango con lim inf y lim sup
+function rangoAleatorio(limiteInferior,limiteSuperior){
+    return Math.floor(Math.round() * (limiteSuperior-limiteInferior+1))+limiteInferior;
+    //(limiteSuperior-limiteInferior+1)tamaño del intervalo + 1 para incluir el limiteInferior
+    //+limiteInferior..eso nos va a dar un numero dentro del rango
+
+}
+//funcion parseInt()
+console.log(parseInt("5"));//5
+console.log(parseInt("-7"));//-7
+console.log(parseInt("6.7"));//se trunca a 6
+console.log(parseInt("abs"));//NaN
+//funcionm parseInt con una base
+console.log("111001100", 2);//argumentos...numeros---base (binario)
+console.log("3E0A", 16);
+console.log("8", 10);
+//operador condicional ternario
+function retornarMinimo(x,y){
+    if(x<y){
+        return x;
+    }
+    else {return y;}
+}
+//es equivalente a 
+function retornarMinimo(x,y){
+    return x<y? x:y;
+}
+retornarMinimo(4,7);//devuelve 4
+
+//
+var a=5;
+var b=9;
+console.log(a>b?a+2:b*3);
+//mutliples condicionales ternarios
+function compararNumeros(a,b){
+    if(a==b){
+        return "a y b son iguales";
+    }
+    else if(a>b){
+        return "a es mayor que b";
+
+    }else{
+        return "b es mayor que a";
+    }
+    
+}
+//es equivalente en ternarios
+function compararNumeros(a,b){
+    return a==b? "a y b son iguales" 
+        : a>b ?  "a es mayor que b"
+        : "b es mayor que a"; 
+}
+//var vs let
+var campista="james";//james
+var campista="david";//ahora campista es davi
+let campista2="james";//es james
+/*let*/ campista2="david";//error campista 2 ya es james let solo se puede declarar  una vez
+//ambito de var let
+var miVariableGlobal=4;
+console.log(miVariableGlobal);
+function miFuncion(){
+    console.log(miVariableGlobal);
+    var miVariableLocal=8;
+        console.log(miVariableLocal);
+    
+} 
+//con let
+for(var i=0;i<3;i++){
+    console.log(i);//se puede usar fuera del ciclo for con let no se puede...con let solo existe dentro del for
+}
+console.log("variable" + i);
+//le con condicional
+if(mostrarColor){
+    let color="verde";
+    console.log("mi color favorito es: " + color);
+}
+console.log(color);//color is undefined porque let solo restringe el ambito a ese bloque+
+//const constantte
+const miConstante=35;//las constantes requieren declararlar e inicializar
+console.log(miConstante);//35
+miConstante=35; // typeerror miconstante is read only
+function calcularAreaCirculo(radio){
+    const PI=3.14;//declaramos a pi como constante porque si var cambia en alguna parte del coldigo podria cambiar el resultado
+    if(radio<0){//si el radio es menor que cero
+        return undefined;//devuelve undefinde
+    }
+    else {
+        PI*(radio**2);//patron que permite elevar al exponente
+    }
+}
+//mutar arreglos
+const MI_ARREGLO=[1,2,3,4];
+MI_ARREGLO=[5,6,7,8];//TYPE ERRROR READONLY NO SE PUEDE CAMBIAR EL ARREGLO
+MI_ARREGLO=[0]=5;
+MI_ARREGLO=[1]=6;
+MI_ARREGLO=[2]=7;
+MI_ARREGLO=[3]=8;
+//CREAR UN OBJETO inmutable
+let colores={
+    "verde": "#10e04b",
+    "azul":"#1b50e0",
+    "negro":"#000000",
+    "blanco":"#ffffff"
+}
+Object.freeze(colores);
+colores.amarillo="#fff200";//no se puede asignar a una propiedad que es solo readonly
+delete colores.verde;//no se puede borrar propiedad typerror
+//funciones flecha
+const fecha1=function(){//definimos una constante que llama a una function 
+    return new Date();//metodo normal returna un objeto fecha
+}
+//es equivalente a la siguiente funcion flecha
+const fecha=()=>new Date();
+//definir funciones flecha que incluyan uno o mas parametros
+const sumarTres= x=> x+3;//console log sumartres (4) = 7
+//definir funcion anonima 
+const concatenarArreglos=function(arr1,arr2){
+    return arr1.concat(arr2);
+}
+//es equivalente a la funcion flehca
+const concatenarArreglos2= (arr1,arr2)=> arr.concat(arr2);//concatenarArreglos([1][2,3,4,5])[1,2,3,4,5]
+const sumar=(a,b)=>{let num=6; return a+b+num;}//sumar(1,1)=8
+//valores por defecto para los parametros
+const incrementar=(num,valor=1)=>num+valor;//esto 
+//incrementar(5);=6 pq el valor de valor por defecto es 1
+//incrementar(5,3);=8
+//operador rest
+function miFuncion(...args){//si el numero de argumentos no es fijo (ejemplo de fijo function miFuncion(a,b,c,d))
+    console.log();//args es rest
+}
+const sumar=(...args)=>{//(x,y,z) para adaptarla para que reciba cualquier nº de argumentos se usa ...(el operador rest
+    //pasamos un flecha como argumento
+    return args.reduce((a,b)=>a+b,0)//reduce()con estos argumentos suma los elementos edl arreglo y retorna el resultado
+}
+//operador spread tomar un arreglo  lo descompone en sus elementos individuales
+const numeros=[1,2,3];
+function sumar(x,y,z){return x+y+z;}
+sumar(...numeros);//el operador es el mismo simbolo ... pero se usa en la llamada a la funcion (...numeros)
+//esto descompone el arreglo en sus componentes
+//sintaxis de desestructuracion
+const usuario={
+    nombre:"Gino Smith",
+    edad:34
+};
+//const nombre=usuario.nombre;
+//const edad=usuario.edad;
+//con ecma 6
+const{nombre,edad}=usuario;
+var coordenadas={
+    x:4,
+    y:6,
+    z:12
+};
+const {x,y,z}=coordenadas;
+//SINTAXIS PAR AOBJETOS
+const usuario1={
+    johnDoe:{edad1:27, 
+        correo:"johnDoe@freecodecamp.com"}
+};
+const{johnDoe:{edad1:edadDelUsuario,correo:correoDelUsuario}}=usuario1;//asignarles a estas propiedads nombres distintos
+console.log(edadDelUsuario);//27
+//otro ejemplo aplicado a objetos anidados
+const PRONOSTICO_LOCAL={
+    "ayer":{
+        minima:61,
+        maxima:75
+    },
+    "hoy":{
+        minima:64,
+        maxima:77,
+    },
+    "manana":{
+        minima:68,
+        maxima:80
+    }
+};
+//const minimoHoy=PRONOSICO_LOCAL.hoy.minima;
+//const maximaHoy=PRONOSICO_LOCAL.hoy.maxima;
+const{hoy:{minima:minimaHoy,maxima:maximaHoy}}=PRONOSTICO_LOCAL;
+console.log(minimaHoy);
+console.log(maximaHoy);
+console.log(maximaHoy, minimaHOy);
+//SINTAXIS DE DESESTRUCTURACION EN ARREGLOS nos permite asignarles valores a variables
+var a;
+var b;
+var c;
+[a,b,,,c]=[1,2,3,4,5];
+
+console.log(c);
+//sintaxis de desestructuracion con rest
+var a,b,arr;
+[a,b,...arr]=[1,2,3,4,5,6,7];
+console.log(arr);// [3,4,5,6,7]
+console.log(a)=1;
+const arregloInicial=[1,2,3,4,5,6,7,8];
+function removerTresPrimerosElementos(arreglo){
+    const [,,, ...nuevoArreglo]=arreglo;
+    return nuevoArreglo;
+}
+const arregloFinal=removerTresPrimerosElementos(arregloInicial);
+console.log(arregloFinal);
+//sintaxis de desustructuraion :pasar objeto como argumento
+var nuevoPerfilCliente ={
+    nombre:"jane doe",
+    edad:24,
+    nacionalidad:"española",
+    ubicacion:"españa"
+
+};
+const actualizarPerfil=(informacionDePerfil)=>{
+    const{nombre,edad,nacionalidad,ubicacion}=informacionDePerfil;
+    console.log(nombre);
+    console.log(edad);
+    console.log(nacionalidad);
+    console.log(ubicacion);
+    
+};
+actualizarPerfil(nuevoPerfilCliente);
+//otra forma de descomponer este objeto en un lista de params
+const actualizarPerfil2=({nombre,edad,nacionalidad,ubicacion})=>{
+    console.log(nombre);
+    console.log(edad);
+    console.log(nacionalidad);
+    console.log(ubicacion);
+}
+//pasar un objeto usando sintacis de desestructuracion
+const estadisticas={
+    max:56.78,
+    desviacionEstandar:4.34,
+    mediana:34.54,
+    moda:23.87,
+    min:-0.75,
+    promedio:35.85
+};
+//const mitad=(est)=>(est.max+e.min)/2.0;
+//ahora con sinta de des
+const mitad={(max,min)}=>(max+min)/2.0;
+console.log(mitad(estadisticas));
+//plantillas literales 
+/*caracteristicas: 
+se usa el acentido invertido backstick` en lugar de comillas
+pueden contener comillas simples o dobles
+las lineas se preservan como se escriben en el codigo
+para reemplazar una variable se escribe ${variable}
+dentro de ${}tambien puede escribir expresiones*/
+var a = 6;
+console.log(`el valor de a es ${a}`);//esto le dise a js que queremos reemplazar el valor de ese en la cadena
+var nombre3="nora";
+var edad3=6;
+console.log(`mi nombre es ${nombre} y tengo ${edad}años.`);
+var miArreglo=[1,2,3,4];
+console.log(`el arreglo es ${JSON.stringify(miArreglo)}`);
+//reemplaza 
+var persona={
+    nombre:"gino cass",
+    edad:10
+};
+const SALUDO=`holas mi nombre es ${persona.nombre} y tengo ${persona.edad} años.`;
+console.log(SALUDO);
+//crear objetos de forma consicsa
+const crearPersona=(nombre4,edad4,idioma4)=>{
+    return {
+        nobre4:nombre,
+        edad4:edad,
+        idioma4:idioma
+    };
+};
+consoe.log(crearPersona("gino smith", 28, "español"))
+//alternativa mas consicsa
+const crearPersona2=(nombre5,edad5,idioma5)=>{(nombre5,edad5, idioma5)};
+
+consoe.log(crearPersona("gino smith", 28, "español"))
+//con estandar ecma6
+/*const persona={
+    nombre:"isabel",
+    presentarse: function(){return `Hola mi nombre es ${this.nombre}`;}
+};
+persona.presentarse();//si el valor de una propiedad es una funcion se llama metodo
+*/
+const persona={
+    nombre:"isabel",
+    presentarse(){return `Hola mi nombre es ${this.nombre}`;}
+};
+persona.presentarse();
+
+//definir una clase
+//una clase es parecido a un plano de un objeto, nos permite muchos objetos con la mismas propiedades,. escribir una vez y rehusarlo muchas veces
+class TransbordadorEspacial{//javascript no crea una clase simplemente de forma mas es consisa un objeto
+    constructor(planeta){
+        this.planeta=planeta;//vamos a asignar el vaalor del parametro a la prop planeta del objeto que estamos creando 
+        //el nombre de clases es uppercameldc¡ase ...cada palaabra incluso la primera usan mayus
+    }
+}
+var zeus= new TransbordadorEspacial("marte");
+console.log(zeus.planeta);//marte
+var apolo=new TransbordadorEspacial("jupiter");
+console.log(apolo.planeta);//jupiter
+class Mascota{
+    constructor(nombre,edad){
+        this.nombre=nombre;
+        this.edad=edad;
+
+
+    }
+}
+var miMascota=  new Mascota("nora",5);
+console.log();
+var tuMascota=new Mascota("gino",2);
+console.log(tuMascota.nombre);//gino 2
+
+//getter setters
+//definir funciones en una clase permiten proteger la data de ese objeto
+/*class Libro{
+    constructor(autor){
+        this.autor=autor;//podria cambiar a valores no validos
+    }
+}*/
+class Libro{
+    constructor(autor){
+        this._autor=autor;//_no podria cambiar el autor
+    }
+    //los getter nos permiten valores privados
+    get autor(){
+        console.log("getter");///retorna el valor getter
+        return this._autor;//solo estamos  retornando este valor del objeto
+    }
+    set autor(nuevoAutor){//permite actualizar el valor de una propiedad    
+            this._autor=nuevoAutor;
+    }
+}
+const libro=new Libro("anonimo");
+console.log(libro.autor);//anonimo
+libros.autor="gino smith";
+console.log(libro.autor);//gino smith por el setter
+
+</script>
